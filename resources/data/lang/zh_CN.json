@@ -180,8 +180,8 @@
     "Main": "主要",
     "Entity": "实体",
     "Loan": "贷款",
-    "Depository": "存放处",
-    "Parent Department": "家长部",
+    "Depository": "存款",
+    "Parent Department": "上级部门",
     "Currency List": "货币清单",
     "Company Currencies": "公司货币",
     "Live Rate": "实时汇率",
@@ -235,5 +235,7 @@
     "Net Movement": "净流动",
     "Export": "导出",
     "Date Range": "日期范围",
-    "Detailed Reports": "详细报告"
+    "Detailed Reports": "详细报告",
+    "Balance": "Balance",
+    "Update Report": "Update Report"
 }
