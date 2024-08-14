@@ -40,6 +40,11 @@ class InviteCompanyEmployee implements InvitesCompanyEmployees
         Mail::to($email)->send(new CompanyInvitation($invitation));
     }
 
+    public function employeeInvitationSent(?User $reachingUser = null, ?Company $company = null, ?string $email = null, ?string $role = null): void
+    {
+        //
+    }
+
     /**
      * Validate the invite employee operation.
      */

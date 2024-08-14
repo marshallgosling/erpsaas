@@ -75,8 +75,8 @@ class FilamentCompaniesServiceProvider extends PanelProvider
             ->id('company')
             ->path('company')
             ->login(Login::class)
-            ->registration(Register::class)
-            ->passwordReset()
+            //->registration(Register::class)
+            //->passwordReset()
             ->tenantMenu(false)
             ->plugin(
                 FilamentCompanies::make()
