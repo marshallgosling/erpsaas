@@ -35,7 +35,7 @@ class UserPanelProvider extends PanelProvider
             ->path('user')
             ->userMenuItems([
                 'profile' => MenuItem::make()
-                    ->label('Profile')
+                    ->label(translate('Profile'))
                     ->icon('heroicon-o-user-circle')
                     ->url(static fn () => url(Profile::getUrl())),
             ])
