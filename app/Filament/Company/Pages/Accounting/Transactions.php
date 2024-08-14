@@ -754,7 +754,7 @@ class Transactions extends Page implements HasTable
         $onlyWithTransactions ??= false;
 
         $options = $isFilter ? [
-            '' => ['all' => translate("All Accounts")," <span class='float-right'>{$this->getBalanceForAllAccounts()}</span>"],
+            '' => ['all' => translate("All Accounts")." <span class='float-right'>{$this->getBalanceForAllAccounts()}</span>"],
         ] : [];
 
         $bankAccountOptions = BankAccount::with('account.subtype')
