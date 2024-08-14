@@ -40,6 +40,16 @@ class AccountChart extends Page
         $this->activeTab = $this->activeTab ?? AccountCategory::Asset->value;
     }
 
+    public function getTitle(): string
+    {
+        return translate(static::$title);
+    }
+
+    public static function getNavigationLabel(): string
+    {
+        return translate(static::$title);
+    }
+
     protected function configureAction(Action $action): void
     {
         $action
