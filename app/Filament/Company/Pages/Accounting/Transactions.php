@@ -265,7 +265,6 @@ class Transactions extends Page implements HasTable
             ->filters([
                 Tables\Filters\Filter::make('filters')
                     ->columnSpanFull()
-                    ->label(translate('Filters'))
                     ->form([
                         Grid::make()
                             ->schema([
