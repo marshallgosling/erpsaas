@@ -208,7 +208,7 @@ abstract class BaseReportPage extends Page
                     ->label('PDF')
                     ->action(fn () => $this->exportPDF()),
             ])
-                ->label('Export')
+                ->label(translate('Export'))
                 ->button()
                 ->outlined()
                 ->dropdownWidth('max-w-[7rem]')
@@ -222,7 +222,7 @@ abstract class BaseReportPage extends Page
     protected function getDateRangeFormComponent(): Component
     {
         return DateRangeSelect::make('dateRange')
-            ->label('Date Range')
+            ->label(translate('Date Range'))
             ->selectablePlaceholder(false)
             ->startDateField('startDate')
             ->endDateField('endDate');
@@ -237,7 +237,7 @@ abstract class BaseReportPage extends Page
     protected function getStartDateFormComponent(): Component
     {
         return DatePicker::make('startDate')
-            ->label('Start Date')
+            ->label(translate('Start Date'))
             ->displayFormat('Y-m-d')
             ->afterStateUpdated(static function (Set $set) {
                 $set('dateRange', 'Custom');
@@ -247,7 +247,7 @@ abstract class BaseReportPage extends Page
     protected function getEndDateFormComponent(): Component
     {
         return DatePicker::make('endDate')
-            ->label('End Date')
+            ->label(translate('End Date'))
             ->displayFormat('Y-m-d')
             ->afterStateUpdated(static function (Set $set) {
                 $set('dateRange', 'Custom');

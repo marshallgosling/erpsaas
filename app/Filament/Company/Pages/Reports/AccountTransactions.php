@@ -42,6 +42,13 @@ class AccountTransactions extends BaseReportPage
         $this->exportService = $exportService;
     }
 
+    protected static ?string $title = 'Account Transactions';
+
+    public function getTitle(): string
+    {
+        return translate(static::$title);
+    }
+
     /**
      * @return array<Column>
      */
@@ -49,19 +56,19 @@ class AccountTransactions extends BaseReportPage
     {
         return [
             Column::make('date')
-                ->label('Date')
+                ->label(translate('Date'))
                 ->alignment(Alignment::Left),
             Column::make('description')
-                ->label('Description')
+                ->label(translate('Description'))
                 ->alignment(Alignment::Left),
             Column::make('debit')
-                ->label('Debit')
+                ->label(translate('Debit'))
                 ->alignment(Alignment::Right),
             Column::make('credit')
-                ->label('Credit')
+                ->label(translate('Credit'))
                 ->alignment(Alignment::Right),
             Column::make('balance')
-                ->label('Balance')
+                ->label(translate('Balance'))
                 ->alignment(Alignment::Right),
         ];
     }
@@ -73,7 +80,7 @@ class AccountTransactions extends BaseReportPage
             ->live()
             ->schema([
                 Select::make('account_id')
-                    ->label('Account')
+                    ->label(translate('Account'))
                     ->options($this->getAccountOptions())
                     ->selectablePlaceholder(false)
                     ->searchable(),
@@ -84,7 +91,7 @@ class AccountTransactions extends BaseReportPage
                 ])->label("\u{200B}"), // its too bad hiddenLabel removes spacing of the label
                 Actions::make([
                     Actions\Action::make('loadReportData')
-                        ->label('Update Report')
+                        ->label(translate('Update Report'))
                         ->submit('loadReportData')
                         ->keyBindings(['mod+s']),
                 ])->alignEnd()->verticallyAlignEnd(),
@@ -100,7 +107,7 @@ class AccountTransactions extends BaseReportPage
             ->toArray();
 
         $allAccountsOption = [
-            'All Accounts' => ['all' => 'All Accounts'],
+            'All Accounts' => ['all' => translate('All Accounts')],
         ];
 
         return $allAccountsOption + $accounts;
@@ -128,12 +135,12 @@ class AccountTransactions extends BaseReportPage
 
     public function getEmptyStateHeading(): string | Htmlable
     {
-        return 'No Transactions Found';
+        return translate('No Transactions Found');
     }
 
     public function getEmptyStateDescription(): string | Htmlable | null
     {
-        return 'Adjust the account or date range, or start by creating a transaction.';
+        return translate('Adjust the account or date range, or start by creating a transaction.');
     }
 
     public function getEmptyStateIcon(): string
@@ -145,7 +152,7 @@ class AccountTransactions extends BaseReportPage
     {
         return [
             Action::make('createTransaction')
-                ->label('Create Transaction')
+                ->label(translate('Create Transaction'))
                 ->url(Transactions::getUrl()),
         ];
     }

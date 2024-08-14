@@ -31,6 +31,13 @@ class AccountBalances extends BaseReportPage
         $this->exportService = $exportService;
     }
 
+    protected static ?string $title = 'Account Balances';
+
+    public function getTitle(): string
+    {
+        return translate(static::$title);
+    }
+
     /**
      * @return array<Column>
      */
@@ -38,30 +45,30 @@ class AccountBalances extends BaseReportPage
     {
         return [
             Column::make('account_code')
-                ->label('Account Code')
+                ->label(translate('Account Code'))
                 ->toggleable()
                 ->alignment(Alignment::Center),
             Column::make('account_name')
-                ->label('Account')
+                ->label(translate('Account'))
                 ->alignment(Alignment::Left),
             Column::make('starting_balance')
-                ->label('Starting Balance')
+                ->label(translate('Starting Balance'))
                 ->toggleable()
                 ->alignment(Alignment::Right),
             Column::make('debit_balance')
-                ->label('Debit')
+                ->label(translate('Debit'))
                 ->toggleable()
                 ->alignment(Alignment::Right),
             Column::make('credit_balance')
-                ->label('Credit')
+                ->label(translate('Credit'))
                 ->toggleable()
                 ->alignment(Alignment::Right),
             Column::make('net_movement')
-                ->label('Net Movement')
+                ->label(translate('Net Movement'))
                 ->toggleable()
                 ->alignment(Alignment::Right),
             Column::make('ending_balance')
-                ->label('Ending Balance')
+                ->label(translate('Ending Balance'))
                 ->toggleable()
                 ->alignment(Alignment::Right),
         ];

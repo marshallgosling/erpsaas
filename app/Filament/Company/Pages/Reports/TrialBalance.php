@@ -31,21 +31,28 @@ class TrialBalance extends BaseReportPage
         $this->exportService = $exportService;
     }
 
+    protected static ?string $title = 'Trial Balance';
+
+    public function getTitle(): string
+    {
+        return translate(static::$title);
+    }
+
     public function getTable(): array
     {
         return [
             Column::make('account_code')
-                ->label('Account Code')
+                ->label(translate('Account Code'))
                 ->toggleable()
                 ->alignment(Alignment::Center),
             Column::make('account_name')
-                ->label('Account')
+                ->label(translate('Account'))
                 ->alignment(Alignment::Left),
             Column::make('debit_balance')
-                ->label('Debit')
+                ->label(translate('Debit'))
                 ->alignment(Alignment::Right),
             Column::make('credit_balance')
-                ->label('Credit')
+                ->label(translate('Credit'))
                 ->alignment(Alignment::Right),
         ];
     }

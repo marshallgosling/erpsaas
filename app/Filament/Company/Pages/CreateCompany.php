@@ -31,26 +31,26 @@ class CreateCompany extends FilamentCreateCompany
                     ->maxLength(255)
                     ->softRequired(),
                 TextInput::make('profile.email')
-                    ->label('Company Email')
+                    ->label(translate('Company Email'))
                     ->email()
                     ->softRequired(),
                 Select::make('profile.entity_type')
-                    ->label('Entity Type')
+                    ->label(translate('Entity Type'))
                     ->options(EntityType::class)
                     ->softRequired(),
                 Select::make('profile.country')
-                    ->label('Country')
+                    ->label(translate('Country'))
                     ->live()
                     ->searchable()
                     ->options(Country::getAvailableCountryOptions())
                     ->softRequired(),
                 Select::make('locale.language')
-                    ->label('Language')
+                    ->label(translate('Language'))
                     ->searchable()
                     ->options(Localization::getAllLanguages())
                     ->softRequired(),
                 Select::make('currencies.code')
-                    ->label('Currency')
+                    ->label(translate('Currency'))
                     ->searchable()
                     ->options(CurrencyAccessor::getAllCurrencyOptions())
                     ->optionsLimit(5)

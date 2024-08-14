@@ -70,7 +70,7 @@ class AccountChart extends Page
         return EditAction::make()
             ->iconButton()
             ->name('editChart')
-            ->label('Edit account')
+            ->label(translate('Edit account'))
             ->modalHeading('Edit Account')
             ->icon('heroicon-m-pencil-square')
             ->record(fn (array $arguments) => Account::find($arguments['chart']))
@@ -83,7 +83,7 @@ class AccountChart extends Page
             ->link()
             ->name('createChart')
             ->model(Account::class)
-            ->label('Add a new account')
+            ->label(translate('Add a new account'))
             ->icon('heroicon-o-plus-circle')
             ->form(fn (Form $form) => $this->getChartForm($form)->operation('create'))
             ->fillForm(fn (array $arguments): array => $this->getChartFormDefaults($arguments['subtype']));
@@ -116,7 +116,7 @@ class AccountChart extends Page
     protected function getTypeFormComponent(bool $useActiveTab = true): Component
     {
         return Select::make('subtype_id')
-            ->label('Type')
+            ->label(translate('Type'))
             ->required()
             ->live()
             ->disabled(static function (string $operation): bool {
@@ -135,7 +135,7 @@ class AccountChart extends Page
     protected function getCodeFormComponent(): Component
     {
         return TextInput::make('code')
-            ->label('Code')
+            ->label(translate('Code'))
             ->required()
             ->validationAttribute('account code')
             ->unique(table: Account::class, column: 'code', ignoreRecord: true)
@@ -145,7 +145,7 @@ class AccountChart extends Page
     protected function getNameFormComponent(): Component
     {
         return TextInput::make('name')
-            ->label('Name')
+            ->label(translate('Name'))
             ->required();
     }
 
@@ -169,14 +169,14 @@ class AccountChart extends Page
     protected function getDescriptionFormComponent(): Component
     {
         return Textarea::make('description')
-            ->label('Description')
+            ->label(translate('Description'))
             ->autosize();
     }
 
     protected function getArchiveFormComponent(): Component
     {
         return Checkbox::make('archived')
-            ->label('Archive Account')
+            ->label(translate('Archive Account'))
             ->helperText('Archived accounts will not be available for selection in transactions.')
             ->hidden(static function (string $operation): bool {
                 return $operation === 'create';
@@ -199,7 +199,7 @@ class AccountChart extends Page
         return [
             CreateAction::make()
                 ->button()
-                ->label('Add New Account')
+                ->label(translate('Add New Account'))
                 ->model(Account::class)
                 ->form(fn (Form $form) => $this->getChartForm($form, false)->operation('create')),
         ];
