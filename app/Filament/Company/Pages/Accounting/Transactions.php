@@ -574,7 +574,7 @@ class Transactions extends Page implements HasTable
             TextInput::make('description')
                 ->label(translate('Description')),
             Select::make('account_id')
-                ->label('Account')
+                ->label(translate('Account'))
                 ->options(fn (?JournalEntry $journalEntry): array => $this->getChartAccountOptions(currentAccountId: $journalEntry?->account_id))
                 ->live()
                 ->softRequired()
@@ -595,7 +595,7 @@ class Transactions extends Page implements HasTable
         $typeLabel = $type->getLabel();
 
         return FormAction::make("add{$typeLabel}Entry")
-            ->label("Add {$typeLabel} Entry")
+            ->label(translate("Add :Type Entry", ['Type'=>$typeLabel]))
             ->button()
             ->outlined()
             ->color($type->isDebit() ? 'primary' : 'gray')
@@ -637,18 +637,18 @@ class Transactions extends Page implements HasTable
                         DateRangeSelect::make("{$fieldPrefix}_date_range")
                             ->label($label)
                             ->selectablePlaceholder(false)
-                            ->placeholder('Select a date range')
+                            ->placeholder(translate('Select a date range'))
                             ->startDateField("{$fieldPrefix}_start_date")
                             ->endDateField("{$fieldPrefix}_end_date"),
                         DatePicker::make("{$fieldPrefix}_start_date")
-                            ->label("{$label} From")
+                            ->label("{$label} ".translate("From"))
                             ->displayFormat('Y-m-d')
                             ->columnStart(1)
                             ->afterStateUpdated(static function (Set $set) use ($fieldPrefix) {
                                 $set("{$fieldPrefix}_date_range", 'Custom');
                             }),
                         DatePicker::make("{$fieldPrefix}_end_date")
-                            ->label("{$label} To")
+                            ->label("{$label} ".translate("To"))
                             ->displayFormat('Y-m-d')
                             ->afterStateUpdated(static function (Set $set) use ($fieldPrefix) {
                                 $set("{$fieldPrefix}_date_range", 'Custom');

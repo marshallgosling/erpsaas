@@ -235,5 +235,20 @@
     "Date Range": "Date Range",
     "Detailed Reports": "Detailed Reports",
     "Balance": "Balance",
-    "Update Report": "Update Report"
+    "Update Report": "Update Report",
+    "Select a date range": "Select a date range",
+    "From": "From",
+    "To": "To",
+    "Assets": "Assets",
+    "Liabilities": "Liabilities",
+    "Equity": "Equity",
+    "Revenue": "Revenue",
+    "Expenses": "Expenses",
+    "Journal": "Journal",
+    "存款": "存款",
+    "支出": "支出",
+    "Uncategorized Income": "Uncategorized Income",
+    "Current Asset": "Current Asset",
+    "Non-Current Asset": "Non-Current Asset",
+    "Contra Asset": "Contra Asset"
 }

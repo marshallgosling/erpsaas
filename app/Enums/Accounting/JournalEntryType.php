@@ -14,7 +14,7 @@ enum JournalEntryType: string implements HasLabel
 
     public function getLabel(): ?string
     {
-        return $this->name;
+        return translate($this->name);
     }
 
     public function isDebit(): bool

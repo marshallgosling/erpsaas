@@ -177,7 +177,7 @@ class AccountChart extends Page
     {
         return Checkbox::make('archived')
             ->label(translate('Archive Account'))
-            ->helperText('Archived accounts will not be available for selection in transactions.')
+            ->helperText(translate('Archived accounts will not be available for selection in transactions.'))
             ->hidden(static function (string $operation): bool {
                 return $operation === 'create';
             });
