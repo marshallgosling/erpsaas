@@ -245,10 +245,14 @@
     "Revenue": "Revenue",
     "Expenses": "Expenses",
     "Journal": "Journal",
-    "存款": "存款",
-    "支出": "支出",
+    "存款": "Deposit",
+    "支出": "Withdrawal",
     "Uncategorized Income": "Uncategorized Income",
     "Current Asset": "Current Asset",
     "Non-Current Asset": "Non-Current Asset",
-    "Contra Asset": "Contra Asset"
+    "Contra Asset": "Contra Asset",
+    "Company Email": "Company Email",
+    "Company Settings": "Company Settings",
+    "Switch Company": "Switch Company",
+    "Display & Accessibility": "Display & Accessibility"
 }

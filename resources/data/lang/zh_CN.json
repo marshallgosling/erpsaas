@@ -124,7 +124,7 @@
     "Week Start": "本周开始",
     "Number Prefix": "数字前缀",
     "Show Logo": "显示徽标",
-    "Company Profile": "公司简介",
+    "Company Profile": "企业简介",
     "Screen 2X Large": "屏幕 2X 大",
     "Street Address": "街道地址",
     "Footer \/ Notes": "页脚\/备注",
@@ -228,7 +228,7 @@
     "Account Transactions": "帐户交易",
     "A record of all transactions for a company. The general ledger is the core of a company's financial records.": "公司所有交易的记录。总分类帐是公司财务记录的核心。",
     "Reports": "报表",
-    "Manage Company": "管理公司",
+    "Manage Company": "管理企业",
     "Account Code": "帐户代码",
     "Starting Balance": "期初余额",
     "Debit": "借方",
@@ -253,5 +253,9 @@
     "Uncategorized Income": "未分类收入",
     "Current Asset": "流动资产",
     "Non-Current Asset": "非流动资产",
-    "Contra Asset": "备抵资产"
+    "Contra Asset": "备抵资产",
+    "Company Email": "企业邮箱",
+    "Company Settings": "企业设定",
+    "Switch Company": "切换企业",
+    "Display & Accessibility": "显示及可访问性"
 }

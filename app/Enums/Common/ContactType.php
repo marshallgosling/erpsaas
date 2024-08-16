@@ -16,7 +16,7 @@ enum ContactType: string implements HasColor, HasIcon, HasLabel
 
     public function getLabel(): ?string
     {
-        return $this->name;
+        return translate($this->name);
     }
 
     public function getColor(): string | array | null
